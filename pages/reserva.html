@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BiblioTech | Reserva</title>
+
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+
+    <!-- Encabezado -->
+    <header>
+
+        <img src="../images/logo_bibliotech.png" alt="Logo de BiblioTech">
+
+        <h1>BiblioTech</h1>
+
+        <p>
+            Biblioteca Provincial "Manuel Belgrano"
+        </p>
+
+    </header>
+
+
+    <!-- Menú de navegación -->
+    <nav>
+
+        <ul>
+
+            <li>
+                <a href="../index.html">Inicio</a>
+            </li>
+
+            <li>
+                <a href="catalogo.html">Catálogo</a>
+            </li>
+
+            <li>
+                <a href="stock.html">Disponibilidad</a>
+            </li>
+
+            <li>
+                <a href="reserva.html">Reservas</a>
+            </li>
+
+            <li>
+                <a href="resultados.html">Mis préstamos</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- Contenido principal -->
+    <main>
+
+        <!-- Introducción -->
+        <section>
+
+            <h2>Solicitar préstamo</h2>
+
+            <p>
+                Completá el siguiente formulario para solicitar
+                el préstamo de un ejemplar disponible.
+            </p>
+
+        </section>
+
+
+        <!-- Formulario -->
+        <section>
+
+            <h2>Datos de la solicitud</h2>
+
+            <form action="confirmacion.html" method="get">
+
+                <p>
+
+                    <label for="nombre">
+                        Nombre del socio:
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nombre"
+                        name="nombre"
+                        required
+                    >
+
+                </p>
+
+
+                <p>
+
+                    <label for="libro">
+                        Libro:
+                    </label>
+
+                    <select id="libro" name="libro" required>
+
+                        <option value="">
+                            Seleccionar libro
+                        </option>
+
+                        <option value="don-quijote">
+                            Don Quijote de la Mancha
+                        </option>
+
+                        <option value="cien-anos">
+                            Cien años de soledad
+                        </option>
+
+                        <option value="principito">
+                            El Principito
+                        </option>
+
+                    </select>
+
+                </p>
+
+
+                <p>
+
+                    <label for="ejemplar">
+                        Ejemplar:
+                    </label>
+
+                    <select id="ejemplar" name="ejemplar" required>
+
+                        <option value="">
+                            Seleccionar ejemplar
+                        </option>
+
+                        <option value="001-01">
+                            Ejemplar 001-01
+                        </option>
+
+                        <option value="001-02">
+                            Ejemplar 001-02
+                        </option>
+
+                        <option value="001-03">
+                            Ejemplar 001-03
+                        </option>
+
+                    </select>
+
+                </p>
+
+
+                <p>
+
+                    <label for="fecha">
+                        Fecha de solicitud:
+                    </label>
+
+                    <input
+                        type="date"
+                        id="fecha"
+                        name="fecha"
+                        required
+                    >
+
+                </p>
+
+
+                <p>
+
+                    <button type="submit">
+                        Confirmar solicitud
+                    </button>
+
+                </p>
+
+            </form>
+
+        </section>
+
+
+        <!-- Información -->
+        <section>
+
+            <h2>Información importante</h2>
+
+
+            <article>
+
+                <h3>📚 Límite de préstamos</h3>
+
+                <p>
+                    Cada socio puede tener un máximo de
+                    <strong>3 préstamos simultáneos</strong>.
+                </p>
+
+            </article>
+
+
+            <article>
+
+                <h3>📖 Colecciones restringidas</h3>
+
+                <p>
+                    Los ejemplares pertenecientes a colecciones únicas
+                    solo pueden utilizarse dentro de la sala de lectura.
+                </p>
+
+            </article>
+
+
+            <article>
+
+                <h3>📅 Fecha de devolución</h3>
+
+                <p>
+                    La fecha límite de devolución será calculada
+                    por el sistema una vez confirmada la solicitud.
+                </p>
+
+            </article>
+
+        </section>
+
+    </main>
+
+
+    <!-- Pie de página -->
+    <footer>
+
+        <p>
+            &copy; 2026 BiblioTech - Biblioteca Provincial
+            "Manuel Belgrano"
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
