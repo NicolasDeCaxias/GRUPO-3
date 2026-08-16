@@ -1,13 +1,17 @@
 /* ---------- General ---------- */
+
 body {
     margin: 0;
     font-family: Georgia, "Times New Roman", serif;
     background-color: #f4efe6;
     color: #2c241b;
 }
+
+
 /* ---------- Encabezado ---------- */
+
 header {
-    background: linear-gradient(135deg, #102a43, #1f4e5f);
+    background-color: #173b57;
     text-align: center;
     padding: 25px 20px;
     border-bottom: 5px solid #c9a227;
@@ -23,18 +27,19 @@ header h1 {
     margin: 5px 0;
     color: #f4d06f;
     font-size: 36px;
-    letter-spacing: 1px;
 }
 
 header p {
     margin: 0;
-    color: #e8e1d5;
+    color: #f4efe6;
     font-size: 18px;
 }
+
+
 /* ---------- Navegación ---------- */
+
 nav {
-    background-color: #172a3a;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+    background-color: #102a43;
 }
 
 nav ul {
@@ -60,13 +65,11 @@ nav a {
     color: #f4efe6;
     text-decoration: none;
     font-weight: bold;
-
-    transition: background-color 0.3s, color 0.3s;
 }
 
 nav a:hover {
     background-color: #c9a227;
-    color: #172a3a;
+    color: #102a43;
 }
 
 
@@ -96,7 +99,7 @@ section h2 {
 }
 
 
-/* ---------- Artículos / Servicios ---------- */
+/* ---------- Artículos ---------- */
 
 article {
     background-color: #fffdf8;
@@ -109,16 +112,6 @@ article {
     padding: 20px;
 
     margin-bottom: 18px;
-
-    box-shadow: 0 3px 8px rgba(44, 36, 27, 0.08);
-
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-
-article:hover {
-    transform: translateY(-3px);
-
-    box-shadow: 0 6px 15px rgba(44, 36, 27, 0.15);
 }
 
 article h3 {
@@ -135,10 +128,72 @@ article p {
 }
 
 
-/* ---------- Enlaces ---------- */
+/* ---------- Enlaces dentro del contenido ---------- */
 
-a {
-    transition: all 0.3s ease;
+main a {
+    color: #173b57;
+    font-weight: bold;
+}
+
+main a:hover {
+    color: #a17c00;
+}
+
+
+/* ---------- Formularios ---------- */
+
+form {
+    background-color: #fffdf8;
+
+    border: 1px solid #d8cdbb;
+    border-radius: 8px;
+
+    padding: 25px;
+}
+
+label {
+    font-weight: bold;
+    color: #173b57;
+}
+
+input,
+select {
+    width: 100%;
+    max-width: 500px;
+
+    padding: 10px;
+
+    margin-top: 8px;
+
+    border: 1px solid #b9aa95;
+    border-radius: 4px;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 16px;
+
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #173b57;
+
+    color: #ffffff;
+
+    border: none;
+    border-radius: 5px;
+
+    padding: 12px 20px;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #c9a227;
+    color: #102a43;
 }
 
 
@@ -160,31 +215,4 @@ footer {
 
 footer p {
     margin: 0;
-}
-
-
-/* ---------- Responsive ---------- */
-
-@media (max-width: 600px) {
-
-    header img {
-        width: 95px;
-    }
-
-    header h1 {
-        font-size: 28px;
-    }
-
-    nav a {
-        padding: 12px 15px;
-    }
-
-    main {
-        padding: 25px 15px;
-    }
-
-    section h2 {
-        font-size: 24px;
-    }
-
 }

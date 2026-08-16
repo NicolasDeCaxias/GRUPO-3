@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Bibliotech | Biblioteca Digital</title>
+    <title>BiblioTech | Biblioteca Provincial</title>
 
     <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -15,16 +15,20 @@
     <!-- Encabezado -->
     <header>
 
-        <img src="images/logo_bibliotech.png" alt="Logo de Bibliotech">
+        <img src="images/logo_bibliotech.png" alt="Logo de BiblioTech">
 
-        <h1>Bibliotech</h1>
-        <p>Biblioteca Digital</p>
+        <h1>BiblioTech</h1>
+
+        <p>
+            Biblioteca Provincial "Manuel Belgrano"
+        </p>
 
     </header>
 
 
     <!-- Menú de navegación -->
     <nav>
+
         <ul>
 
             <li>
@@ -32,22 +36,23 @@
             </li>
 
             <li>
-                <a href="pages/libreria.html">Librería</a>
+                <a href="pages/catalogo.html">Catálogo</a>
             </li>
 
             <li>
-                <a href="pages/stock.html">Stock</a>
+                <a href="pages/stock.html">Disponibilidad</a>
             </li>
 
             <li>
-                <a href="pages/reserva.html">Reserva</a>
+                <a href="pages/reserva.html">Reservas</a>
             </li>
 
             <li>
-                <a href="pages/resultados.html">Resultados</a>
+                <a href="pages/resultados.html">Mis préstamos</a>
             </li>
 
         </ul>
+
     </nav>
 
 
@@ -57,23 +62,25 @@
         <!-- Bienvenida -->
         <section>
 
-            <h2>Bienvenido a Bibliotech</h2>
+            <h2>Bienvenido a BiblioTech</h2>
 
             <p>
-                Bienvenido a Bibliotech, tu biblioteca digital.
-                Desde este sitio podrás consultar los libros disponibles,
-                revisar el stock y realizar reservas de manera sencilla.
+                BiblioTech es el sistema de gestión de la Biblioteca
+                Provincial "Manuel Belgrano", diseñado para facilitar
+                el acceso de los vecinos al material bibliográfico.
             </p>
 
             <p>
-                Explora nuestro catálogo, encuentra el libro que estás
-                buscando y realiza tu reserva de forma rápida y cómoda.
+                Desde este sitio podrás consultar el catálogo,
+                verificar la disponibilidad de los ejemplares,
+                solicitar préstamos y consultar el estado de tus
+                libros.
             </p>
 
         </section>
 
 
-        <!-- Servicios -->
+        <!-- Servicios principales -->
         <section>
 
             <h2>Servicios disponibles</h2>
@@ -81,11 +88,17 @@
 
             <article>
 
-                <h3>📚 Consultar libros</h3>
+                <h3>📚 Catálogo de libros</h3>
 
                 <p>
-                    Explora nuestra librería y consulta los diferentes
-                    libros disponibles en Bibliotech.
+                    Consultá los libros disponibles en la biblioteca
+                    buscando por título, autor o género.
+                </p>
+
+                <p>
+                    <a href="pages/catalogo.html">
+                        Consultar catálogo
+                    </a>
                 </p>
 
             </article>
@@ -93,11 +106,17 @@
 
             <article>
 
-                <h3>📦 Consultar stock</h3>
+                <h3>📦 Disponibilidad</h3>
 
                 <p>
-                    Comprueba la disponibilidad de los libros antes
-                    de realizar una reserva.
+                    Verificá cuántos ejemplares se encuentran disponibles,
+                    prestados o sin stock.
+                </p>
+
+                <p>
+                    <a href="pages/stock.html">
+                        Consultar disponibilidad
+                    </a>
                 </p>
 
             </article>
@@ -105,11 +124,17 @@
 
             <article>
 
-                <h3>📝 Reservar un libro</h3>
+                <h3>📝 Solicitar un préstamo</h3>
 
                 <p>
-                    Realiza una reserva del libro que deseas
-                    obtener de manera rápida y sencilla.
+                    Seleccioná un ejemplar disponible y realizá una
+                    solicitud de préstamo.
+                </p>
+
+                <p>
+                    <a href="pages/reserva.html">
+                        Solicitar préstamo
+                    </a>
                 </p>
 
             </article>
@@ -117,14 +142,91 @@
 
             <article>
 
-                <h3>📋 Consultar resultados</h3>
+                <h3>📋 Mis préstamos</h3>
 
                 <p>
-                    Consulta el estado y los resultados de las
-                    reservas realizadas.
+                    Consultá tus préstamos activos, libros devueltos
+                    y posibles sanciones.
+                </p>
+
+                <p>
+                    <a href="pages/resultados.html">
+                        Ver mis préstamos
+                    </a>
                 </p>
 
             </article>
+
+        </section>
+
+
+        <!-- Información importante -->
+        <section>
+
+            <h2>Información importante</h2>
+
+
+            <article>
+
+                <h3>📚 Límite de préstamos</h3>
+
+                <p>
+                    Cada socio puede tener un máximo de
+                    <strong>3 préstamos simultáneos</strong>.
+                </p>
+
+            </article>
+
+
+            <article>
+
+                <h3>📖 Colecciones restringidas</h3>
+
+                <p>
+                    Algunos ejemplares pertenecen a colecciones únicas
+                    y no pueden retirarse de la biblioteca.
+                </p>
+
+                <p>
+                    Estos materiales solamente pueden utilizarse
+                    dentro de la sala de lectura.
+                </p>
+
+            </article>
+
+
+            <article>
+
+                <h3>⚠️ Devoluciones</h3>
+
+                <p>
+                    Los libros deben ser devueltos dentro de la fecha
+                    establecida para evitar posibles sanciones.
+                </p>
+
+            </article>
+
+        </section>
+
+
+        <!-- Sobre BiblioTech -->
+        <section>
+
+            <h2>Sobre BiblioTech</h2>
+
+            <p>
+                El sistema BiblioTech busca modernizar la gestión de
+                préstamos e inventario de la Biblioteca Provincial
+                "Manuel Belgrano", facilitando la consulta del material
+                bibliográfico y reduciendo los tiempos de atención.
+            </p>
+
+            <p>
+                La plataforma permitirá a los socios gestionar sus
+                consultas y solicitudes de manera sencilla, mientras
+                que la biblioteca podrá mejorar el control de sus
+                ejemplares y préstamos.
+            </p>
 
         </section>
 
@@ -135,7 +237,8 @@
     <footer>
 
         <p>
-            &copy; 2026 Bibliotech - Biblioteca Digital
+            &copy; 2026 BiblioTech - Biblioteca Provincial
+            "Manuel Belgrano"
         </p>
 
     </footer>
