@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BiblioTech | Catálogo</title>
+
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+
+    <!-- Encabezado -->
+    <header>
+
+        <img src="../images/logo_bibliotech.png" alt="Logo de BiblioTech">
+
+        <h1>BiblioTech</h1>
+
+        <p>
+            Biblioteca Provincial "Manuel Belgrano"
+        </p>
+
+    </header>
+
+
+    <!-- Menú de navegación -->
+    <nav>
+
+        <ul>
+
+            <li>
+                <a href="../index.html">Inicio</a>
+            </li>
+
+            <li>
+                <a href="catalogo.html">Catálogo</a>
+            </li>
+
+            <li>
+                <a href="stock.html">Disponibilidad</a>
+            </li>
+
+            <li>
+                <a href="reserva.html">Reservas</a>
+            </li>
+
+            <li>
+                <a href="resultados.html">Mis préstamos</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- Contenido principal -->
+    <main>
+
+        <!-- Título -->
+        <section>
+
+            <h2>Catálogo de libros</h2>
+
+            <p>
+                Buscá libros por título, autor o género y consultá
+                la disponibilidad de los ejemplares.
+            </p>
+
+        </section>
+
+
+        <!-- Buscador -->
+        <section>
+
+            <h2>Buscar un libro</h2>
+
+            <form>
+
+                <label for="busqueda">
+                    Título, autor o género:
+                </label>
+
+                <input
+                    type="text"
+                    id="busqueda"
+                    name="busqueda"
+                    placeholder="Ej: El Principito, Orwell, Fantasía"
+                >
+
+                <button type="submit">
+                    Buscar
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- Resultados -->
+        <section>
+
+            <h2>Resultados del catálogo</h2>
+
+
+            <!-- Libro disponible -->
+            <article>
+
+                <h3>Don Quijote de la Mancha</h3>
+
+                <p>
+                    <strong>Autor:</strong>
+                    Miguel de Cervantes
+                </p>
+
+                <p>
+                    <strong>Género:</strong>
+                    Novela
+                </p>
+
+                <p>
+                    <strong>Ejemplares disponibles:</strong>
+                    3
+                </p>
+
+                <p>
+                    <strong>Estado:</strong>
+                    Disponible
+                </p>
+
+                <a href="reserva.html">
+                    Reservar ejemplar
+                </a>
+
+            </article>
+
+
+            <!-- Libro disponible -->
+            <article>
+
+                <h3>Cien años de soledad</h3>
+
+                <p>
+                    <strong>Autor:</strong>
+                    Gabriel García Márquez
+                </p>
+
+                <p>
+                    <strong>Género:</strong>
+                    Realismo mágico
+                </p>
+
+                <p>
+                    <strong>Ejemplares disponibles:</strong>
+                    2
+                </p>
+
+                <p>
+                    <strong>Estado:</strong>
+                    Disponible
+                </p>
+
+                <a href="reserva.html">
+                    Reservar ejemplar
+                </a>
+
+            </article>
+
+
+            <!-- Libro sin stock -->
+            <article>
+
+                <h3>1984</h3>
+
+                <p>
+                    <strong>Autor:</strong>
+                    George Orwell
+                </p>
+
+                <p>
+                    <strong>Género:</strong>
+                    Ciencia ficción / Distopía
+                </p>
+
+                <p>
+                    <strong>Ejemplares disponibles:</strong>
+                    0
+                </p>
+
+                <p>
+                    <strong>Estado:</strong>
+                    Sin stock
+                </p>
+
+                <p>
+                    ⚠️ Actualmente no hay ejemplares disponibles
+                    para préstamo.
+                </p>
+
+            </article>
+
+
+            <!-- Libro restringido -->
+            <article>
+
+                <h3>Historia de la Biblioteca Nacional</h3>
+
+                <p>
+                    <strong>Autor:</strong>
+                    Biblioteca Nacional
+                </p>
+
+                <p>
+                    <strong>Género:</strong>
+                    Historia
+                </p>
+
+                <p>
+                    <strong>Ejemplares disponibles:</strong>
+                    1
+                </p>
+
+                <p>
+                    <strong>Estado:</strong>
+                    Consulta en sala
+                </p>
+
+                <p>
+                    📖 Este ejemplar pertenece a una colección restringida.
+                    No está permitido realizar préstamos a domicilio.
+                </p>
+
+            </article>
+
+
+            <!-- Libro disponible -->
+            <article>
+
+                <h3>El Principito</h3>
+
+                <p>
+                    <strong>Autor:</strong>
+                    Antoine de Saint-Exupéry
+                </p>
+
+                <p>
+                    <strong>Género:</strong>
+                    Literatura infantil
+                </p>
+
+                <p>
+                    <strong>Ejemplares disponibles:</strong>
+                    4
+                </p>
+
+                <p>
+                    <strong>Estado:</strong>
+                    Disponible
+                </p>
+
+                <a href="reserva.html">
+                    Reservar ejemplar
+                </a>
+
+            </article>
+
+
+        </section>
+
+    </main>
+
+
+    <!-- Pie de página -->
+    <footer>
+
+        <p>
+            &copy; 2026 BiblioTech - Biblioteca Provincial
+            "Manuel Belgrano"
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
