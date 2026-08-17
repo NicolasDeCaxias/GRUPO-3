@@ -1,6 +1,0 @@
-Nombre y Apellido
-Nicolas de Caxias
-
-
-Usuario GitHub
-NicolasDeCaxias
