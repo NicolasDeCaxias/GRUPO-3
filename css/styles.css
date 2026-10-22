@@ -216,3 +216,151 @@ footer {
 footer p {
     margin: 0;
 }
+
+/* =====================================================
+   Hito 3 - Interfaz dinámica
+   ===================================================== */
+
+/* ---------- Avisos ---------- */
+
+.aviso {
+    padding: 14px 18px;
+    margin-bottom: 14px;
+    border-radius: 6px;
+    border-left: 6px solid #173b57;
+    background-color: #e3edf5;
+    color: #102a43;
+    font-weight: bold;
+}
+
+.aviso-error {
+    background-color: #fbe3e1;
+    border-left-color: #b3261e;
+    color: #5f130e;
+}
+
+.aviso-alerta {
+    background-color: #fff3cd;
+    border-left-color: #c9a227;
+    color: #5c4600;
+}
+
+.aviso-ok {
+    background-color: #e0f2e4;
+    border-left-color: #2e7d32;
+    color: #1b4d1f;
+}
+
+/* ---------- Tarjetas ---------- */
+
+.tarjeta-alerta {
+    border-left-color: #b3261e;
+    background-color: #fff6f5;
+}
+
+.botones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.boton-secundario {
+    background-color: #6b5d4a;
+}
+
+nav a[href="#"] {
+    color: #f4d06f;
+}
+
+footer button {
+    background-color: transparent;
+    border: 1px solid #e8e1d5;
+    font-size: 13px;
+    padding: 6px 12px;
+}
+
+/* ---------- Tablero ---------- */
+
+.indicadores {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 14px;
+}
+
+.indicador {
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.indicador p {
+    margin: 4px 0;
+}
+
+.indicador-valor {
+    font-size: 40px;
+    font-weight: bold;
+    color: #173b57 !important;
+}
+
+.barra {
+    height: 20px;
+    background-color: #c9a227;
+    border-radius: 4px;
+}
+
+/* ---------- Modo administración: botones grandes y alto contraste ---------- */
+
+body.modo-admin {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+body.modo-admin article {
+    background-color: #ffffff;
+    border: 3px solid #000000;
+    border-left: 12px solid #000000;
+}
+
+body.modo-admin article p,
+body.modo-admin article h3,
+body.modo-admin section h2,
+body.modo-admin label {
+    color: #000000;
+    font-size: 22px;
+}
+
+body.modo-admin button {
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 24px;
+    padding: 22px 34px;
+    min-width: 240px;
+    border: 3px solid #000000;
+}
+
+body.modo-admin button:hover,
+body.modo-admin button:focus {
+    background-color: #ffd400;
+    color: #000000;
+}
+
+body.modo-admin .boton-secundario {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+body.modo-admin .tarjeta-alerta {
+    background-color: #ffe4e1;
+    border-left-color: #b00000;
+}
+
+body.modo-admin select {
+    font-size: 22px;
+    padding: 16px;
+    max-width: 700px;
+}
+
+body.modo-admin nav a {
+    font-size: 20px;
+}

@@ -1,0 +1,445 @@
+{
+  "config": {
+    "diasPrestamo": 14,
+    "maxPrestamos": 3
+  },
+  "usuarios": [
+    {
+      "id": "U01",
+      "usuario": "lucia",
+      "clave": "1234",
+      "nombre": "Lucía",
+      "apellido": "Fernández",
+      "rol": "socio",
+      "direccion": "Av. Rivadavia 1520",
+      "fechaNacimiento": "1988-04-12",
+      "esMenor": false
+    },
+    {
+      "id": "U02",
+      "usuario": "carlos",
+      "clave": "1234",
+      "nombre": "Carlos",
+      "apellido": "Benítez",
+      "rol": "socio",
+      "direccion": "Calle San Martín 345",
+      "fechaNacimiento": "1975-09-30",
+      "esMenor": false
+    },
+    {
+      "id": "U03",
+      "usuario": "tomas",
+      "clave": "1234",
+      "nombre": "Tomás",
+      "apellido": "Ruiz",
+      "rol": "socio",
+      "direccion": "Pasaje Belgrano 78",
+      "fechaNacimiento": "2013-02-20",
+      "esMenor": true
+    },
+    {
+      "id": "U04",
+      "usuario": "sofia",
+      "clave": "1234",
+      "nombre": "Sofía",
+      "apellido": "Alonso",
+      "rol": "socio",
+      "direccion": "Mitre 910",
+      "fechaNacimiento": "1995-11-05",
+      "esMenor": false
+    },
+    {
+      "id": "U05",
+      "usuario": "julia",
+      "clave": "1234",
+      "nombre": "Julia",
+      "apellido": "Martínez",
+      "rol": "bibliotecario",
+      "direccion": "Sarmiento 220",
+      "fechaNacimiento": "1982-06-18",
+      "esMenor": false
+    },
+    {
+      "id": "U06",
+      "usuario": "roberto",
+      "clave": "1234",
+      "nombre": "Roberto",
+      "apellido": "Paz",
+      "rol": "bibliotecario",
+      "direccion": "Urquiza 640",
+      "fechaNacimiento": "1960-01-25",
+      "esMenor": false
+    },
+    {
+      "id": "U07",
+      "usuario": "alicia",
+      "clave": "1234",
+      "nombre": "Alicia",
+      "apellido": "Romero",
+      "rol": "director",
+      "direccion": "Belgrano 1010",
+      "fechaNacimiento": "1970-08-09",
+      "esMenor": false
+    },
+    {
+      "id": "U08",
+      "usuario": "hector",
+      "clave": "1234",
+      "nombre": "Héctor",
+      "apellido": "Vega",
+      "rol": "director",
+      "direccion": "Alsina 455",
+      "fechaNacimiento": "1968-12-02",
+      "esMenor": false
+    }
+  ],
+  "libros": [
+    {
+      "id": "L001",
+      "codigo": "001",
+      "titulo": "Don Quijote de la Mancha",
+      "autor": "Miguel de Cervantes",
+      "genero": "Novela",
+      "restringido": false
+    },
+    {
+      "id": "L002",
+      "codigo": "002",
+      "titulo": "Cien años de soledad",
+      "autor": "Gabriel García Márquez",
+      "genero": "Realismo mágico",
+      "restringido": false
+    },
+    {
+      "id": "L003",
+      "codigo": "003",
+      "titulo": "El Principito",
+      "autor": "Antoine de Saint-Exupéry",
+      "genero": "Literatura infantil",
+      "restringido": false
+    },
+    {
+      "id": "L004",
+      "codigo": "004",
+      "titulo": "1984",
+      "autor": "George Orwell",
+      "genero": "Ciencia ficción / Distopía",
+      "restringido": false
+    },
+    {
+      "id": "L005",
+      "codigo": "005",
+      "titulo": "Historia de la Biblioteca Nacional",
+      "autor": "Biblioteca Nacional",
+      "genero": "Historia",
+      "restringido": true
+    }
+  ],
+  "ejemplares": [
+    {
+      "id": "001-01",
+      "libroId": "L001",
+      "estado": "disponible"
+    },
+    {
+      "id": "001-02",
+      "libroId": "L001",
+      "estado": "disponible"
+    },
+    {
+      "id": "001-03",
+      "libroId": "L001",
+      "estado": "disponible"
+    },
+    {
+      "id": "001-04",
+      "libroId": "L001",
+      "estado": "prestado"
+    },
+    {
+      "id": "001-05",
+      "libroId": "L001",
+      "estado": "prestado"
+    },
+    {
+      "id": "002-01",
+      "libroId": "L002",
+      "estado": "disponible"
+    },
+    {
+      "id": "002-02",
+      "libroId": "L002",
+      "estado": "disponible"
+    },
+    {
+      "id": "002-03",
+      "libroId": "L002",
+      "estado": "prestado"
+    },
+    {
+      "id": "002-04",
+      "libroId": "L002",
+      "estado": "reservado"
+    },
+    {
+      "id": "003-01",
+      "libroId": "L003",
+      "estado": "disponible"
+    },
+    {
+      "id": "003-02",
+      "libroId": "L003",
+      "estado": "disponible"
+    },
+    {
+      "id": "003-03",
+      "libroId": "L003",
+      "estado": "disponible"
+    },
+    {
+      "id": "003-04",
+      "libroId": "L003",
+      "estado": "reservado"
+    },
+    {
+      "id": "003-05",
+      "libroId": "L003",
+      "estado": "prestado"
+    },
+    {
+      "id": "003-06",
+      "libroId": "L003",
+      "estado": "prestado"
+    },
+    {
+      "id": "004-01",
+      "libroId": "L004",
+      "estado": "prestado"
+    },
+    {
+      "id": "004-02",
+      "libroId": "L004",
+      "estado": "prestado"
+    },
+    {
+      "id": "004-03",
+      "libroId": "L004",
+      "estado": "prestado"
+    },
+    {
+      "id": "005-01",
+      "libroId": "L005",
+      "estado": "disponible"
+    }
+  ],
+  "prestamos": [
+    {
+      "id": "P001",
+      "usuarioId": "U01",
+      "libroId": "L001",
+      "ejemplarId": "001-04",
+      "fechaSolicitud": "2026-10-12",
+      "fechaPrestamo": "2026-10-12",
+      "fechaLimite": "2026-10-26",
+      "fechaDevolucion": null,
+      "estado": "activo"
+    },
+    {
+      "id": "P002",
+      "usuarioId": "U01",
+      "libroId": "L003",
+      "ejemplarId": "003-05",
+      "fechaSolicitud": "2026-10-15",
+      "fechaPrestamo": "2026-10-15",
+      "fechaLimite": "2026-10-29",
+      "fechaDevolucion": null,
+      "estado": "activo"
+    },
+    {
+      "id": "P003",
+      "usuarioId": "U02",
+      "libroId": "L002",
+      "ejemplarId": "002-03",
+      "fechaSolicitud": "2026-10-01",
+      "fechaPrestamo": "2026-10-01",
+      "fechaLimite": "2026-10-15",
+      "fechaDevolucion": null,
+      "estado": "activo"
+    },
+    {
+      "id": "P004",
+      "usuarioId": "U02",
+      "libroId": "L004",
+      "ejemplarId": "004-01",
+      "fechaSolicitud": "2026-09-25",
+      "fechaPrestamo": "2026-09-25",
+      "fechaLimite": "2026-10-09",
+      "fechaDevolucion": null,
+      "estado": "activo"
+    },
+    {
+      "id": "P005",
+      "usuarioId": "U02",
+      "libroId": "L001",
+      "ejemplarId": "001-05",
+      "fechaSolicitud": "2026-10-14",
+      "fechaPrestamo": "2026-10-14",
+      "fechaLimite": "2026-10-28",
+      "fechaDevolucion": null,
+      "estado": "activo"
+    },
+    {
+      "id": "P006",
+      "usuarioId": "U03",
+      "libroId": "L003",
+      "ejemplarId": "003-06",
+      "fechaSolicitud": "2026-10-19",
+      "fechaPrestamo": "2026-10-19",
+      "fechaLimite": "2026-11-02",
+      "fechaDevolucion": null,
+      "estado": "activo"
+    },
+    {
+      "id": "P007",
+      "usuarioId": "U03",
+      "libroId": "L004",
+      "ejemplarId": "004-03",
+      "fechaSolicitud": "2026-10-18",
+      "fechaPrestamo": "2026-10-18",
+      "fechaLimite": "2026-11-01",
+      "fechaDevolucion": null,
+      "estado": "activo"
+    },
+    {
+      "id": "P008",
+      "usuarioId": "U04",
+      "libroId": "L004",
+      "ejemplarId": "004-02",
+      "fechaSolicitud": "2026-10-20",
+      "fechaPrestamo": "2026-10-20",
+      "fechaLimite": "2026-11-03",
+      "fechaDevolucion": null,
+      "estado": "activo"
+    },
+    {
+      "id": "P009",
+      "usuarioId": "U03",
+      "libroId": "L002",
+      "ejemplarId": "002-04",
+      "fechaSolicitud": "2026-10-21",
+      "fechaPrestamo": null,
+      "fechaLimite": "2026-11-04",
+      "fechaDevolucion": null,
+      "estado": "pendiente"
+    },
+    {
+      "id": "P010",
+      "usuarioId": "U04",
+      "libroId": "L003",
+      "ejemplarId": "003-04",
+      "fechaSolicitud": "2026-10-21",
+      "fechaPrestamo": null,
+      "fechaLimite": "2026-11-04",
+      "fechaDevolucion": null,
+      "estado": "pendiente"
+    },
+    {
+      "id": "P011",
+      "usuarioId": "U01",
+      "libroId": "L002",
+      "ejemplarId": "002-01",
+      "fechaSolicitud": "2026-07-15",
+      "fechaPrestamo": "2026-07-15",
+      "fechaLimite": "2026-07-29",
+      "fechaDevolucion": "2026-07-28",
+      "estado": "devuelto"
+    },
+    {
+      "id": "P012",
+      "usuarioId": "U01",
+      "libroId": "L004",
+      "ejemplarId": "004-01",
+      "fechaSolicitud": "2026-07-01",
+      "fechaPrestamo": "2026-07-01",
+      "fechaLimite": "2026-07-15",
+      "fechaDevolucion": "2026-07-14",
+      "estado": "devuelto"
+    },
+    {
+      "id": "P013",
+      "usuarioId": "U01",
+      "libroId": "L003",
+      "ejemplarId": "003-01",
+      "fechaSolicitud": "2026-08-10",
+      "fechaPrestamo": "2026-08-10",
+      "fechaLimite": "2026-08-24",
+      "fechaDevolucion": "2026-08-22",
+      "estado": "devuelto"
+    },
+    {
+      "id": "P014",
+      "usuarioId": "U02",
+      "libroId": "L001",
+      "ejemplarId": "001-02",
+      "fechaSolicitud": "2026-08-03",
+      "fechaPrestamo": "2026-08-03",
+      "fechaLimite": "2026-08-17",
+      "fechaDevolucion": "2026-08-16",
+      "estado": "devuelto"
+    },
+    {
+      "id": "P015",
+      "usuarioId": "U02",
+      "libroId": "L003",
+      "ejemplarId": "003-02",
+      "fechaSolicitud": "2026-09-02",
+      "fechaPrestamo": "2026-09-02",
+      "fechaLimite": "2026-09-16",
+      "fechaDevolucion": "2026-09-15",
+      "estado": "devuelto"
+    },
+    {
+      "id": "P016",
+      "usuarioId": "U03",
+      "libroId": "L003",
+      "ejemplarId": "003-03",
+      "fechaSolicitud": "2026-09-05",
+      "fechaPrestamo": "2026-09-05",
+      "fechaLimite": "2026-09-19",
+      "fechaDevolucion": "2026-09-18",
+      "estado": "devuelto"
+    },
+    {
+      "id": "P017",
+      "usuarioId": "U04",
+      "libroId": "L002",
+      "ejemplarId": "002-02",
+      "fechaSolicitud": "2026-09-10",
+      "fechaPrestamo": "2026-09-10",
+      "fechaLimite": "2026-09-24",
+      "fechaDevolucion": "2026-09-23",
+      "estado": "devuelto"
+    },
+    {
+      "id": "P018",
+      "usuarioId": "U04",
+      "libroId": "L001",
+      "ejemplarId": "001-03",
+      "fechaSolicitud": "2026-08-20",
+      "fechaPrestamo": "2026-08-20",
+      "fechaLimite": "2026-09-03",
+      "fechaDevolucion": "2026-09-01",
+      "estado": "devuelto"
+    }
+  ],
+  "notificaciones": [
+    {
+      "id": "N001",
+      "usuarioId": "U02",
+      "prestamoId": "P004",
+      "mensaje": "Tenés un préstamo vencido de \"1984\". Por favor acercate a la biblioteca a devolverlo.",
+      "fecha": "2026-10-12",
+      "leida": false
+    }
+  ]
+}

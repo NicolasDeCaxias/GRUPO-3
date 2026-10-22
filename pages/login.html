@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BiblioTech | Iniciar sesión</title>
+
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body data-pagina="login">
+
+    <!-- Encabezado -->
+    <header>
+
+        <img src="../images/logo_bibliotech.png" alt="Logo de BiblioTech">
+
+        <h1>BiblioTech</h1>
+
+        <p>
+            Biblioteca Provincial "Manuel Belgrano"
+        </p>
+
+    </header>
+
+
+    <!-- Menú de navegación (generado por JavaScript según el rol) -->
+    <nav>
+        <ul id="menu"></ul>
+    </nav>
+
+
+    <!-- Contenido principal -->
+    <main>
+
+        <section>
+            <h2>Iniciar sesión</h2>
+            <p>Ingresá tus credenciales para acceder al sistema.</p>
+            <form id="form-login">
+                <p>
+                    <label for="usuario">Usuario:</label>
+                    <input type="text" id="usuario" name="usuario" required autocomplete="username">
+                </p>
+                <p>
+                    <label for="clave">Contraseña:</label>
+                    <input type="password" id="clave" name="clave" required autocomplete="current-password">
+                </p>
+                <p>
+                    <button type="submit">Ingresar</button>
+                </p>
+            </form>
+        </section>
+
+        <section>
+            <h2>Usuarios de prueba</h2>
+            <p>Datos de demostración cargados desde <code>data/datos.json</code>.</p>
+            <div id="usuarios-demo"></div>
+        </section>
+    </main>
+
+
+    <!-- Pie de página -->
+    <footer>
+
+        <p>
+            &copy; 2026 BiblioTech - Biblioteca Provincial
+            "Manuel Belgrano"
+        </p>
+
+    </footer>
+
+    <script src="../data/datos.js"></script>
+    <script src="../js/scripts.js"></script>
+
+</body>
+
+</html>

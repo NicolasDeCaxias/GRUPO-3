@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
-<body>
+<body data-pagina="index">
 
     <!-- Encabezado -->
     <header>
@@ -28,31 +28,7 @@
 
     <!-- Menú de navegación -->
     <nav>
-
-        <ul>
-
-            <li>
-                <a href="index.html">Inicio</a>
-            </li>
-
-            <li>
-                <a href="pages/catalogo.html">Catálogo</a>
-            </li>
-
-            <li>
-                <a href="pages/stock.html">Disponibilidad</a>
-            </li>
-
-            <li>
-                <a href="pages/reserva.html">Reservas</a>
-            </li>
-
-            <li>
-                <a href="pages/resultados.html">Mis préstamos</a>
-            </li>
-
-        </ul>
-
+        <ul id="menu"></ul>
     </nav>
 
 
@@ -62,7 +38,9 @@
         <!-- Bienvenida -->
         <section>
 
-            <h2>Bienvenido a BiblioTech</h2>
+            <h2 id="titulo-bienvenida">Bienvenido a BiblioTech</h2>
+
+            <div id="resumen-usuario"></div>
 
             <p>
                 BiblioTech es el sistema de gestión de la Biblioteca
@@ -85,77 +63,7 @@
 
             <h2>Servicios disponibles</h2>
 
-
-            <article>
-
-                <h3>📚 Catálogo de libros</h3>
-
-                <p>
-                    Consultá los libros disponibles en la biblioteca
-                    buscando por título, autor o género.
-                </p>
-
-                <p>
-                    <a href="pages/catalogo.html">
-                        Consultar catálogo
-                    </a>
-                </p>
-
-            </article>
-
-
-            <article>
-
-                <h3>📦 Disponibilidad</h3>
-
-                <p>
-                    Verificá cuántos ejemplares se encuentran disponibles,
-                    prestados o sin stock.
-                </p>
-
-                <p>
-                    <a href="pages/stock.html">
-                        Consultar disponibilidad
-                    </a>
-                </p>
-
-            </article>
-
-
-            <article>
-
-                <h3>📝 Solicitar un préstamo</h3>
-
-                <p>
-                    Seleccioná un ejemplar disponible y realizá una
-                    solicitud de préstamo.
-                </p>
-
-                <p>
-                    <a href="pages/reserva.html">
-                        Solicitar préstamo
-                    </a>
-                </p>
-
-            </article>
-
-
-            <article>
-
-                <h3>📋 Mis préstamos</h3>
-
-                <p>
-                    Consultá tus préstamos activos, libros devueltos
-                    y posibles sanciones.
-                </p>
-
-                <p>
-                    <a href="pages/resultados.html">
-                        Ver mis préstamos
-                    </a>
-                </p>
-
-            </article>
+            <div id="servicios"></div>
 
         </section>
 
@@ -242,6 +150,9 @@
         </p>
 
     </footer>
+
+    <script src="data/datos.js"></script>
+    <script src="js/scripts.js"></script>
 
 </body>
 

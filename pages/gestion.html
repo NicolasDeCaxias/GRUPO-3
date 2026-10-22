@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BiblioTech | Gestión</title>
+
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body data-pagina="gestion" class="modo-admin">
+
+    <!-- Encabezado -->
+    <header>
+
+        <img src="../images/logo_bibliotech.png" alt="Logo de BiblioTech">
+
+        <h1>BiblioTech</h1>
+
+        <p>
+            Biblioteca Provincial "Manuel Belgrano"
+        </p>
+
+    </header>
+
+
+    <!-- Menú de navegación (generado por JavaScript según el rol) -->
+    <nav>
+        <ul id="menu"></ul>
+    </nav>
+
+
+    <!-- Contenido principal -->
+    <main>
+
+        <section>
+            <h2>Gestión de préstamos</h2>
+            <p>
+                Panel del bibliotecario: solicitudes, devoluciones,
+                préstamos vencidos y bajas de ejemplares.
+            </p>
+        </section>
+
+        <section>
+            <h2>Solicitudes pendientes</h2>
+            <div id="solicitudes-pendientes"></div>
+        </section>
+
+        <section>
+            <h2>Devoluciones de hoy</h2>
+            <div id="devoluciones-hoy"></div>
+        </section>
+
+        <section>
+            <h2>Reporte de préstamos vencidos</h2>
+            <div id="reporte-vencidos"></div>
+        </section>
+
+        <section>
+            <h2>Todos los préstamos activos</h2>
+            <div id="prestamos-vigentes"></div>
+        </section>
+
+        <section>
+            <h2>Dar de baja un ejemplar deteriorado</h2>
+            <form id="form-baja">
+                <p>
+                    <label for="ejemplar-baja">Ejemplar:</label>
+                    <select id="ejemplar-baja" name="ejemplar-baja"></select>
+                </p>
+                <p>
+                    <button type="submit">Dar de baja</button>
+                </p>
+            </form>
+        </section>
+    </main>
+
+
+    <!-- Pie de página -->
+    <footer>
+
+        <p>
+            &copy; 2026 BiblioTech - Biblioteca Provincial
+            "Manuel Belgrano"
+        </p>
+
+    </footer>
+
+    <script src="../data/datos.js"></script>
+    <script src="../js/scripts.js"></script>
+
+</body>
+
+</html>
