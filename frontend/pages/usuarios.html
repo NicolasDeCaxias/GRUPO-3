@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BiblioTech | Usuarios</title>
+
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body data-pagina="usuarios">
+
+    <!-- Encabezado -->
+    <header>
+
+        <img src="../assets/logo_bibliotech.png" alt="Logo de BiblioTech">
+
+        <h1>BiblioTech</h1>
+
+        <p>
+            Biblioteca Provincial "Manuel Belgrano"
+        </p>
+
+    </header>
+
+
+    <!-- Menú de navegación (generado por JavaScript según el rol) -->
+    <nav>
+        <ul id="menu"></ul>
+    </nav>
+
+
+    <!-- Contenido principal -->
+    <main>
+
+        <section>
+            <h2>Usuarios y roles</h2>
+            <p>
+                Panel del director: registrá bibliotecarios y socios asignándoles un usuario propio
+                de la biblioteca y una contraseña, y dalos de baja o reactivalos cuando haga falta.
+            </p>
+        </section>
+
+        <section>
+            <h2>Registrar un usuario</h2>
+            <form id="form-alta">
+                <p>
+                    <label for="alta-usuario">Usuario de la biblioteca:</label>
+                    <input type="text" id="alta-usuario" name="usuario" required minlength="3" maxlength="20"
+                        autocomplete="off" autocapitalize="none" spellcheck="false" placeholder="ej: pepe">
+                    <small class="ayuda">Un nombre propio de la biblioteca, sin @ ni correo (por ejemplo: pepe, maria.gomez). Debe ser único.</small>
+                </p>
+                <p>
+                    <label for="alta-clave">Contraseña:</label>
+                    <input type="password" id="alta-clave" name="clave" required minlength="8" maxlength="64" autocomplete="new-password">
+                    <small class="ayuda">Mínimo 8 caracteres, con letras y números, sin incluir el usuario. Se la entregás a la persona para que ingrese.</small>
+                </p>
+                <p>
+                    <label for="alta-mostrar">
+                        <input type="checkbox" id="alta-mostrar"> Mostrar contraseña
+                    </label>
+                </p>
+                <p>
+                    <label for="alta-nombre">Nombre:</label>
+                    <input type="text" id="alta-nombre" name="nombre" required maxlength="40" autocomplete="off">
+                </p>
+                <p>
+                    <label for="alta-apellido">Apellido:</label>
+                    <input type="text" id="alta-apellido" name="apellido" required maxlength="40" autocomplete="off">
+                </p>
+                <p>
+                    <label for="alta-rol">Rol:</label>
+                    <select id="alta-rol" name="rol" required>
+                        <option value="bibliotecario">Bibliotecario/a</option>
+                        <option value="socio">Socio/a</option>
+                    </select>
+                </p>
+                <p id="campo-menor" hidden>
+                    <label for="alta-menor">
+                        <input type="checkbox" id="alta-menor"> Es socio menor de edad
+                    </label>
+                </p>
+                <p>
+                    <button type="submit">Registrar usuario</button>
+                </p>
+            </form>
+        </section>
+
+        <section>
+            <h2>Bibliotecarios</h2>
+            <div id="lista-bibliotecarios"></div>
+        </section>
+
+        <section>
+            <h2>Socios</h2>
+            <div id="lista-socios"></div>
+        </section>
+
+        <section>
+            <h2>Dirección</h2>
+            <div id="lista-directores"></div>
+        </section>
+
+    </main>
+
+
+    <!-- Pie de página -->
+    <footer>
+
+        <p>
+            &copy; 2026 BiblioTech - Biblioteca Provincial
+            "Manuel Belgrano"
+        </p>
+
+    </footer>
+
+    <script src="../js/config.js"></script>
+    <script src="../js/scripts.js"></script>
+
+</body>
+
+</html>
