@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BiblioTech | Catálogo</title>
+
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body data-pagina="catalogo">
+
+    <!-- Encabezado -->
+    <header>
+
+        <img src="../images/logo_bibliotech.png" alt="Logo de BiblioTech">
+
+        <h1>BiblioTech</h1>
+
+        <p>
+            Biblioteca Provincial "Manuel Belgrano"
+        </p>
+
+    </header>
+
+
+    <!-- Menú de navegación (generado por JavaScript según el rol) -->
+    <nav>
+        <ul id="menu"></ul>
+    </nav>
+
+
+    <!-- Contenido principal -->
+    <main>
+
+        <section>
+            <h2>Catálogo de libros</h2>
+            <p>
+                Buscá libros por título, autor o género y consultá
+                la disponibilidad de los ejemplares.
+            </p>
+        </section>
+
+        <section>
+            <h2>Buscar un libro</h2>
+            <form id="form-busqueda">
+                <label for="busqueda">
+                    Título, autor o género:
+                </label>
+                <input type="text" id="busqueda" name="busqueda" placeholder="Ej: El Principito, Orwell, Fantasía">
+                <button type="submit">Buscar</button>
+            </form>
+        </section>
+
+        <section>
+            <h2>Resultados del catálogo</h2>
+            <div id="lista-libros"></div>
+        </section>
+    </main>
+
+
+    <!-- Pie de página -->
+    <footer>
+
+        <p>
+            &copy; 2026 BiblioTech - Biblioteca Provincial
+            "Manuel Belgrano"
+        </p>
+
+    </footer>
+
+    <script src="../data/datos.js"></script>
+    <script src="../js/scripts.js"></script>
+
+</body>
+
+</html>

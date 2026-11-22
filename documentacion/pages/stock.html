@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BiblioTech | Disponibilidad</title>
+
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body data-pagina="stock">
+
+    <!-- Encabezado -->
+    <header>
+
+        <img src="../images/logo_bibliotech.png" alt="Logo de BiblioTech">
+
+        <h1>BiblioTech</h1>
+
+        <p>
+            Biblioteca Provincial "Manuel Belgrano"
+        </p>
+
+    </header>
+
+
+    <!-- Menú de navegación (generado por JavaScript según el rol) -->
+    <nav>
+        <ul id="menu"></ul>
+    </nav>
+
+
+    <!-- Contenido principal -->
+    <main>
+
+        <section>
+            <h2>Disponibilidad del catálogo</h2>
+            <p>
+                Consultá el estado de los ejemplares registrados
+                en la Biblioteca Provincial "Manuel Belgrano".
+            </p>
+        </section>
+
+        <section>
+            <h2>Buscar en el inventario</h2>
+            <form id="form-busqueda">
+                <label for="busqueda">
+                    Buscar libro:
+                </label>
+                <input type="text" id="busqueda" name="busqueda" placeholder="Ingresá título, autor o código">
+                <button type="submit">Buscar</button>
+            </form>
+        </section>
+
+        <section>
+            <h2>Lista de ejemplares</h2>
+            <div id="lista-stock"></div>
+        </section>
+
+        <section>
+            <h2>Resumen del inventario</h2>
+            <div id="resumen-stock"></div>
+        </section>
+    </main>
+
+
+    <!-- Pie de página -->
+    <footer>
+
+        <p>
+            &copy; 2026 BiblioTech - Biblioteca Provincial
+            "Manuel Belgrano"
+        </p>
+
+    </footer>
+
+    <script src="../data/datos.js"></script>
+    <script src="../js/scripts.js"></script>
+
+</body>
+
+</html>
