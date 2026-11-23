@@ -18,9 +18,8 @@ Prácticas Profesionalizantes I.
 ### Integrantes
 
 - Nicolas De Caxias
-- Nombre y Apellido
-- Nombre y Apellido
-- Nombre y Apellido
+- Tobias Corominas Leandro
+- Leila Nahir
 
 ---
 

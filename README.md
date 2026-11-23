@@ -8,8 +8,8 @@ Sistema de gestión para la **Biblioteca Provincial "Manuel Belgrano"**. Esta ve
 
 | Servicio | URL |
 | --- | --- |
-| Frontend (Static Site) | `COMPLETAR: https://bibliotech-frontend.onrender.com` |
-| Backend / API (Web Service) | `COMPLETAR: https://bibliotech-api.onrender.com` |
+| Frontend (Static Site) | ` https://bibliotech-frontend-gag8.onrender.com` |
+| Backend / API (Web Service) | `https://bibliotech-backend-uth6.onrender.com` |
 
 El backend corre en el plan gratuito de Render: tras un rato sin uso se "duerme" y la primera solicitud puede tardar hasta un minuto. Los datos viven en memoria, por lo que se reinician cuando el servidor se reinicia.
 
