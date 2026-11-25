@@ -12,9 +12,9 @@ const ENDPOINTS = [
     ] },
     { grupo: 'Usuarios', items: [
         ['GET', '/api/usuarios?rol=', 'director', 'Lista los usuarios (sin contraseñas); "rol" filtra por socio, bibliotecario o director.'],
-        ['POST', '/api/usuarios', 'director, bibliotecario', 'Registra un usuario ("usuario", "clave", "nombre", "apellido", "rol", "esMenor"). El bibliotecario solo registra socios.'],
+        ['POST', '/api/usuarios', 'director, bibliotecario', 'Registra un usuario ("usuario", "clave", "nombre", "apellido", "dni" de 7 u 8 dígitos, "rol", "esMenor"). El DNI no puede repetirse. El bibliotecario solo registra socios.'],
         ['PATCH', '/api/usuarios/:id/estado', 'director, bibliotecario', 'Da de baja o reactiva un usuario con { "activo": true | false }. El bibliotecario solo puede hacerlo con socios.'],
-        ['GET', '/api/socios', 'bibliotecario', 'Lista de socios con usuario, estado y préstamos vigentes y vencidos.']
+        ['GET', '/api/socios', 'bibliotecario', 'Lista de socios con usuario, DNI, estado y préstamos vigentes y vencidos.']
     ] },
     { grupo: 'Catálogo e inventario', items: [
         ['GET', '/api/libros?q=', 'autenticado', 'Lista libros con disponibilidad; "q" filtra por título, autor, género o código.'],

@@ -5,14 +5,14 @@ function crearDatos() {
     const d = (n) => sumarDias(hoy, n);
 
     const usuarios = [
-        { id: 'U01', usuario: 'lucia', clave: 'Lucia#Libro26', nombre: 'Lucía', apellido: 'Fernández', rol: 'socio', esMenor: false },
-        { id: 'U02', usuario: 'carlos', clave: 'Carlos#Mapa26', nombre: 'Carlos', apellido: 'Benítez', rol: 'socio', esMenor: false },
-        { id: 'U03', usuario: 'tomas', clave: 'Tomas#Luna26', nombre: 'Tomás', apellido: 'Ruiz', rol: 'socio', esMenor: true },
-        { id: 'U04', usuario: 'sofia', clave: 'Sofia#Rio26', nombre: 'Sofía', apellido: 'Alonso', rol: 'socio', esMenor: false },
-        { id: 'U05', usuario: 'julia', clave: 'Julia#Tinta26', nombre: 'Julia', apellido: 'Martínez', rol: 'bibliotecario', esMenor: false },
-        { id: 'U06', usuario: 'roberto', clave: 'Roberto#Lupa26', nombre: 'Roberto', apellido: 'Paz', rol: 'bibliotecario', esMenor: false },
-        { id: 'U07', usuario: 'alicia', clave: 'Alicia#Faro26', nombre: 'Alicia', apellido: 'Romero', rol: 'director', esMenor: false },
-        { id: 'U08', usuario: 'hector', clave: 'Hector#Cima26', nombre: 'Héctor', apellido: 'Vega', rol: 'director', esMenor: false }
+        { id: 'U01', usuario: 'lucia', dni: '40123456', clave: 'Lucia#Libro26', nombre: 'Lucía', apellido: 'Fernández', rol: 'socio', esMenor: false },
+        { id: 'U02', usuario: 'carlos', dni: '38234567', clave: 'Carlos#Mapa26', nombre: 'Carlos', apellido: 'Benítez', rol: 'socio', esMenor: false },
+        { id: 'U03', usuario: 'tomas', dni: '50345678', clave: 'Tomas#Luna26', nombre: 'Tomás', apellido: 'Ruiz', rol: 'socio', esMenor: true },
+        { id: 'U04', usuario: 'sofia', dni: '42456789', clave: 'Sofia#Rio26', nombre: 'Sofía', apellido: 'Alonso', rol: 'socio', esMenor: false },
+        { id: 'U05', usuario: 'julia', dni: '28567890', clave: 'Julia#Tinta26', nombre: 'Julia', apellido: 'Martínez', rol: 'bibliotecario', esMenor: false },
+        { id: 'U06', usuario: 'roberto', dni: '25678901', clave: 'Roberto#Lupa26', nombre: 'Roberto', apellido: 'Paz', rol: 'bibliotecario', esMenor: false },
+        { id: 'U07', usuario: 'alicia', dni: '22789012', clave: 'Alicia#Faro26', nombre: 'Alicia', apellido: 'Romero', rol: 'director', esMenor: false },
+        { id: 'U08', usuario: 'hector', dni: '20890123', clave: 'Hector#Cima26', nombre: 'Héctor', apellido: 'Vega', rol: 'director', esMenor: false }
     ];
 
     const libros = [

@@ -61,6 +61,7 @@ function usuarioAdministrable(u) {
     return {
         id: u.id,
         usuario: u.usuario,
+        dni: u.dni,
         nombre: u.nombre,
         apellido: u.apellido,
         nombreVisible: nombreVisible(u),
@@ -232,6 +233,7 @@ function listarSocios() {
         .map((u) => ({
             id: u.id,
             usuario: u.usuario,
+            dni: u.dni,
             nombreVisible: nombreVisible(u),
             activo: u.activo,
             vigentes: prestamosVigentesDe(u.id).length,
@@ -251,6 +253,18 @@ function validarUsuarioNuevo(valor) {
         throw new ErrorApi(409, 'Ya existe un usuario llamado \"' + usuario + '\". Elegí otro.');
     }
     return usuario;
+}
+
+function validarDni(valor) {
+    const dni = exigirTexto(valor, 'dni').replace(/[.\s]/g, '');
+    if (!/^[0-9]{7,8}$/.test(dni)) {
+        throw new ErrorApi(400, 'El DNI debe tener 7 u 8 dígitos numéricos.');
+    }
+    const existente = datos.usuarios.find((u) => u.dni === dni);
+    if (existente) {
+        throw new ErrorApi(409, 'Ya hay una persona registrada con ese DNI (usuario: ' + existente.usuario + ').');
+    }
+    return dni;
 }
 
 function validarNombrePersona(valor, etiqueta) {
@@ -282,11 +296,13 @@ function registrarUsuario(actor, cuerpo) {
     }
     const nombre = validarNombrePersona(cuerpo.nombre, 'nombre');
     const apellido = validarNombrePersona(cuerpo.apellido, 'apellido');
+    const dni = validarDni(cuerpo.dni);
     const esMenor = rol === 'socio' && cuerpo.esMenor === true;
 
     const nuevo = {
         id: siguienteId(datos.usuarios, 'U', 2),
         usuario,
+        dni,
         claveHash: hashearClave(clave),
         nombre,
         apellido,

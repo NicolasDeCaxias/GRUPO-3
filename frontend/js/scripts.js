@@ -842,6 +842,7 @@ function prepararAlta(alRegistrar) {
                 clave: clave.value,
                 nombre: document.querySelector('#alta-nombre').value.trim(),
                 apellido: document.querySelector('#alta-apellido').value.trim(),
+                dni: document.querySelector('#alta-dni').value.trim(),
                 rol: selRol ? selRol.value : 'socio',
                 esMenor: casillaMenor ? casillaMenor.checked : false
             });
@@ -874,6 +875,7 @@ async function iniciarSocios() {
         socios.forEach(s => {
             const art = tarjeta(s.nombreVisible, [
                 ['Usuario', s.usuario],
+                ['DNI', s.dni],
                 ['Préstamos vigentes', s.vigentes],
                 ['Préstamos vencidos', s.vencidos],
                 ['Estado', s.activo ? 'Activo' : 'Dado de baja']
@@ -943,6 +945,7 @@ async function iniciarUsuarios() {
             deRol.forEach(u => {
                 const art = tarjeta(u.nombreVisible, [
                     ['Usuario', u.usuario],
+                    ['DNI', u.dni],
                     ['Rol', ROLES_ETIQUETA[u.rol]],
                     ['Fecha de alta', formatearFecha(u.fechaAlta)],
                     ['Estado', u.activo ? 'Activo' : 'Dado de baja']
