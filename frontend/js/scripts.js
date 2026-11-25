@@ -815,12 +815,20 @@ async function iniciarSocios() {
         const lista = document.querySelector('#lista-socios');
         lista.replaceChildren();
         if (socios.length === 0) vacio(lista, 'Todavía no hay socios registrados.');
-        socios.forEach(s => lista.append(tarjeta(s.nombreVisible, [
-            ['Usuario', s.usuario],
-            ['Préstamos vigentes', s.vigentes],
-            ['Préstamos vencidos', s.vencidos],
-            ['Estado', s.activo ? 'Activo' : 'Dado de baja']
-        ], !s.activo ? 'tarjeta-inactiva' : (s.vencidos > 0 ? 'tarjeta-alerta' : ''))));
+        socios.forEach(s => {
+            const art = tarjeta(s.nombreVisible, [
+                ['Usuario', s.usuario],
+                ['Préstamos vigentes', s.vigentes],
+                ['Préstamos vencidos', s.vencidos],
+                ['Estado', s.activo ? 'Activo' : 'Dado de baja']
+            ], !s.activo ? 'tarjeta-inactiva' : (s.vencidos > 0 ? 'tarjeta-alerta' : ''));
+            const fila = crear('div', null, 'botones');
+            fila.append(s.activo
+                ? boton('Dar de baja', () => cambiarActividadUsuario(s, false, dibujar), 'boton-secundario')
+                : boton('Reactivar', () => cambiarActividadUsuario(s, true, dibujar)));
+            art.append(fila);
+            lista.append(art);
+        });
     }
     prepararAlta(dibujar);
     await dibujar();

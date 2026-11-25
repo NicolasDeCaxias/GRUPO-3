@@ -108,7 +108,7 @@ app.get('/api/usuarios', requerirRol('director'),
 app.post('/api/usuarios', requerirRol('director', 'bibliotecario'),
     responder((req) => servicios.registrarUsuario(req.usuario, req.body || {}), 201));
 
-app.patch('/api/usuarios/:id/estado', requerirRol('director'),
+app.patch('/api/usuarios/:id/estado', requerirRol('director', 'bibliotecario'),
     responder((req) => servicios.cambiarEstadoUsuario(req.usuario, req.params.id, (req.body || {}).activo)));
 
 app.post('/api/prestamos', requerirRol('socio', 'bibliotecario'),

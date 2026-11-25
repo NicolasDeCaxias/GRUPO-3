@@ -13,7 +13,7 @@ const ENDPOINTS = [
     { grupo: 'Usuarios', items: [
         ['GET', '/api/usuarios?rol=', 'director', 'Lista los usuarios (sin contraseñas); "rol" filtra por socio, bibliotecario o director.'],
         ['POST', '/api/usuarios', 'director, bibliotecario', 'Registra un usuario ("usuario", "clave", "nombre", "apellido", "rol", "esMenor"). El bibliotecario solo registra socios.'],
-        ['PATCH', '/api/usuarios/:id/estado', 'director', 'Da de baja o reactiva un usuario con { "activo": true | false }.'],
+        ['PATCH', '/api/usuarios/:id/estado', 'director, bibliotecario', 'Da de baja o reactiva un usuario con { "activo": true | false }. El bibliotecario solo puede hacerlo con socios.'],
         ['GET', '/api/socios', 'bibliotecario', 'Lista de socios con usuario, estado y préstamos vigentes y vencidos.']
     ] },
     { grupo: 'Catálogo e inventario', items: [

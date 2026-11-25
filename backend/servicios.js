@@ -313,6 +313,9 @@ function cambiarEstadoUsuario(actor, id, activo) {
     }
     const objetivo = usuarioPorId(id);
     if (!objetivo) throw new ErrorApi(404, 'El usuario indicado no existe.');
+    if (actor.rol === 'bibliotecario' && objetivo.rol !== 'socio') {
+        throw new ErrorApi(403, 'Un bibliotecario solo puede dar de baja o reactivar socios.');
+    }
     if (objetivo.rol === 'director') {
         throw new ErrorApi(403, 'No se puede modificar el estado de un director.');
     }
