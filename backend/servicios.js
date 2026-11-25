@@ -474,7 +474,7 @@ function cambiarEstadoPrestamo(id, nuevoEstado) {
     return presentarPrestamo(prestamo);
 }
 
-function notificarMoroso(prestamoId) {
+function notificarMoroso(prestamoId, actor) {
     const prestamo = prestamoPorId(prestamoId);
     if (!prestamo) throw new ErrorApi(404, 'El préstamo indicado no existe.');
     if (!estaVencido(prestamo)) {
@@ -494,7 +494,29 @@ function notificarMoroso(prestamoId) {
             prestamo.fechaLimite.split('-').reverse().join('/') +
             '). Por favor acercate a la biblioteca a devolverlo.',
         fecha: hoyISO(),
-        leida: false
+        leida: false,
+        emisorId: actor ? actor.id : null
+    });
+    return { creada: true, mensaje: 'Aviso enviado a ' + nombreVisible(socio) + '.' };
+}
+
+function enviarAviso(actor, cuerpo) {
+    const socioId = exigirTexto(cuerpo.socioId, 'socioId');
+    const mensaje = exigirTexto(cuerpo.mensaje, 'mensaje');
+    if (mensaje.length < 3 || mensaje.length > 300) {
+        throw new ErrorApi(400, 'El mensaje debe tener entre 3 y 300 caracteres.');
+    }
+    const socio = usuarioPorId(socioId);
+    if (!socio || socio.rol !== 'socio') throw new ErrorApi(404, 'El socio indicado no existe.');
+    if (!socio.activo) throw new ErrorApi(422, 'El socio indicado está dado de baja.');
+    datos.notificaciones.push({
+        id: siguienteId(datos.notificaciones, 'N'),
+        usuarioId: socio.id,
+        prestamoId: null,
+        mensaje,
+        fecha: hoyISO(),
+        leida: false,
+        emisorId: actor.id
     });
     return { creada: true, mensaje: 'Aviso enviado a ' + nombreVisible(socio) + '.' };
 }
@@ -504,7 +526,16 @@ function listarNotificaciones(actor) {
         .filter((n) => n.usuarioId === actor.id)
         .slice()
         .reverse()
-        .map((n) => ({ id: n.id, mensaje: n.mensaje, fecha: n.fecha, leida: n.leida }));
+        .map((n) => {
+            const emisor = n.emisorId ? usuarioPorId(n.emisorId) : null;
+            return {
+                id: n.id,
+                mensaje: n.mensaje,
+                fecha: n.fecha,
+                leida: n.leida,
+                emisor: emisor ? nombreVisible(emisor) : null
+            };
+        });
 }
 
 function marcarNotificacionesLeidas(actor) {
@@ -613,6 +644,7 @@ module.exports = {
     listarPrestamos,
     cambiarEstadoPrestamo,
     notificarMoroso,
+    enviarAviso,
     listarNotificaciones,
     marcarNotificacionesLeidas,
     listarEjemplares,

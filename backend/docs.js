@@ -32,7 +32,8 @@ const ENDPOINTS = [
         ['POST', '/api/prestamos/:id/notificaciones', 'bibliotecario', 'Envía un aviso al socio por un préstamo vencido.']
     ] },
     { grupo: 'Avisos y tablero', items: [
-        ['GET', '/api/notificaciones/mias', 'socio', 'Avisos de la biblioteca del socio.'],
+        ['POST', '/api/notificaciones', 'bibliotecario', 'Envía un aviso con mensaje propio a un socio ("socioId", "mensaje" de 3 a 300 caracteres).'],
+        ['GET', '/api/notificaciones/mias', 'socio', 'Avisos de la biblioteca del socio, con quién los envió. El sistema los consulta cada pocos segundos para mostrarlos en vivo.'],
         ['PATCH', '/api/notificaciones/mias/leidas', 'socio', 'Marca los avisos como leídos.'],
         ['GET', '/api/tablero', 'director', 'Indicadores, categorías más leídas, libros sin stock y actividad de socios.']
     ] }

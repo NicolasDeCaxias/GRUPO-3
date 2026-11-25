@@ -131,12 +131,15 @@ app.patch('/api/prestamos/:id/estado', requerirRol('bibliotecario'),
 
 app.post('/api/prestamos/:id/notificaciones', requerirRol('bibliotecario'), (req, res, next) => {
     try {
-        const resultado = servicios.notificarMoroso(req.params.id);
+        const resultado = servicios.notificarMoroso(req.params.id, req.usuario);
         res.status(resultado.creada ? 201 : 200).json(resultado);
     } catch (error) {
         next(error);
     }
 });
+
+app.post('/api/notificaciones', requerirRol('bibliotecario'),
+    responder((req) => servicios.enviarAviso(req.usuario, req.body || {}), 201));
 
 app.get('/api/notificaciones/mias', requerirRol('socio'),
     responder((req) => servicios.listarNotificaciones(req.usuario)));

@@ -82,6 +82,25 @@
         </section>
 
         <section>
+            <h2>Enviar un aviso a un socio</h2>
+            <form id="form-aviso">
+                <p>
+                    <label for="aviso-socio">Socio:</label>
+                    <select id="aviso-socio" required></select>
+                </p>
+                <p>
+                    <label for="aviso-mensaje">Mensaje:</label>
+                    <textarea id="aviso-mensaje" rows="4" required minlength="3" maxlength="300"
+                        placeholder="ej: Tu libro reservado ya está disponible para retirar."></textarea>
+                    <small class="ayuda">Entre 3 y 300 caracteres. El socio lo recibe en el momento si tiene el sistema abierto.</small>
+                </p>
+                <p>
+                    <button type="submit">Enviar aviso</button>
+                </p>
+            </form>
+        </section>
+
+        <section>
             <h2>Socios registrados</h2>
             <div id="lista-socios"></div>
         </section>

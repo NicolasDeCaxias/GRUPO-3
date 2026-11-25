@@ -242,6 +242,54 @@ function construirPie() {
     footer.append(p);
 }
 
+const INTERVALO_AVISOS = 8000;
+
+function actualizarCampana(cantidad) {
+    const enlace = document.querySelector('#menu a[href$="resultados.html"]');
+    if (!enlace) return;
+    enlace.textContent = 'Mis préstamos' + (cantidad > 0 ? ' 🔔 ' + cantidad : '');
+}
+
+function mostrarAvisoFlotante(notificacion) {
+    const caja = crear('div', null, 'aviso aviso-alerta aviso-flotante');
+    caja.setAttribute('role', 'status');
+    caja.append(crear('strong', '🔔 Nuevo aviso de la biblioteca'));
+    if (notificacion.emisor) caja.append(crear('p', 'De: ' + notificacion.emisor));
+    caja.append(crear('p', notificacion.mensaje));
+    const fila = crear('div', null, 'botones');
+    fila.append(
+        boton('Ver mis avisos', () => { window.location.href = PAGINAS + 'resultados.html'; }),
+        boton('Cerrar', () => caja.remove(), 'boton-secundario')
+    );
+    caja.append(fila);
+    document.body.append(caja);
+    setTimeout(() => caja.remove(), 30000);
+}
+
+function iniciarAvisosEnVivo() {
+    if (!usuarioActual || usuarioActual.rol !== 'socio') return;
+    let conocidos = null;
+
+    async function revisar() {
+        if (document.hidden) return;
+        try {
+            const notificaciones = await api('GET', '/api/notificaciones/mias');
+            const sinLeer = notificaciones.filter(n => !n.leida);
+            actualizarCampana(sinLeer.length);
+            if (conocidos !== null) {
+                sinLeer.filter(n => !conocidos.has(n.id)).forEach(mostrarAvisoFlotante);
+            }
+            conocidos = new Set(sinLeer.map(n => n.id));
+        } catch (error) {
+            // Un fallo momentáneo de conexión no debe molestar al socio.
+        }
+    }
+
+    revisar();
+    setInterval(revisar, INTERVALO_AVISOS);
+    document.addEventListener('visibilitychange', () => { if (!document.hidden) revisar(); });
+}
+
 async function mostrarAvisosDelSocio() {
     if (usuarioActual.rol !== 'socio') return null;
     const resumen = await api('GET', '/api/prestamos/resumen');
@@ -582,13 +630,16 @@ async function iniciarResultados() {
     const avisos = document.querySelector('#avisos-biblioteca');
     if (notis.length === 0) vacio(avisos, 'No tenés avisos de la biblioteca.');
     notis.forEach(n => {
-        const art = tarjeta(n.leida ? 'Aviso' : '🔔 Aviso nuevo', [['Fecha', formatearFecha(n.fecha)]],
+        const filasAviso = [['Fecha', formatearFecha(n.fecha)]];
+        if (n.emisor) filasAviso.push(['Enviado por', n.emisor]);
+        const art = tarjeta(n.leida ? 'Aviso' : '🔔 Aviso nuevo', filasAviso,
             n.leida ? '' : 'tarjeta-alerta');
         art.append(crear('p', n.mensaje));
         avisos.append(art);
     });
     if (notis.some(n => !n.leida)) {
         await api('PATCH', '/api/notificaciones/mias/leidas');
+        actualizarCampana(0);
     }
 }
 
@@ -812,6 +863,11 @@ function prepararAlta(alRegistrar) {
 async function iniciarSocios() {
     async function dibujar() {
         const socios = await api('GET', '/api/socios');
+        const selAviso = document.querySelector('#aviso-socio');
+        const elegido = selAviso.value;
+        selAviso.replaceChildren();
+        socios.filter(s => s.activo).forEach(s => selAviso.append(new Option(s.nombreVisible + ' (' + s.usuario + ')', s.id)));
+        if (elegido) selAviso.value = elegido;
         const lista = document.querySelector('#lista-socios');
         lista.replaceChildren();
         if (socios.length === 0) vacio(lista, 'Todavía no hay socios registrados.');
@@ -831,7 +887,30 @@ async function iniciarSocios() {
         });
     }
     prepararAlta(dibujar);
+    prepararAviso();
     await dibujar();
+}
+
+function prepararAviso() {
+    const form = document.querySelector('#form-aviso');
+    form.addEventListener('submit', async e => {
+        e.preventDefault();
+        quitarAvisos('error', 'ok', 'info');
+        const botonEnviar = form.querySelector('button[type="submit"]');
+        botonEnviar.disabled = true;
+        try {
+            const resultado = await api('POST', '/api/notificaciones', {
+                socioId: document.querySelector('#aviso-socio').value,
+                mensaje: document.querySelector('#aviso-mensaje').value.trim()
+            });
+            document.querySelector('#aviso-mensaje').value = '';
+            mostrarAviso('✅ ' + resultado.mensaje, 'ok');
+        } catch (error) {
+            mostrarAviso('⛔ ' + error.message, 'error');
+        }
+        window.scrollTo(0, 0);
+        botonEnviar.disabled = false;
+    });
 }
 
 async function cambiarActividadUsuario(u, activo, dibujar) {
@@ -947,6 +1026,7 @@ async function iniciar() {
     } finally {
         conectando.remove();
     }
+    iniciarAvisosEnVivo();
 }
 
 document.addEventListener('DOMContentLoaded', iniciar);
